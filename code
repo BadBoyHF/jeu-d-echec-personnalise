@@ -4,98 +4,106 @@
 
 void pTour();
 void pPion();
-int x=0;
-int y=0;
-int manche=1;
+void pCavalier();
+int x = 0;
+int y = 0;
+int manche = 1;
 
 
-void main ()
+
+void main()
 {
 	int  piece;
-	char tour= 't';
-	char cheval='c';
-	char fou= 'f';
+	char tour = 't';
+	char cheval = 'c';
+	char fou = 'f';
 	char reine = 'r';
-	char roi= 'R';
-	char pion= 'p';
+	char roi = 'R';
+	char pion = 'p';
 
- 
-	char table [8] [8] = {
-	{tour,cheval,fou,reine,roi,fou,cheval,tour},
-	{pion,pion,pion,pion,pion,pion,pion,pion},
-	{0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,0,0},
-	{pion,pion,pion,pion,pion,pion,pion,pion},
-	{tour,cheval,fou,reine,roi,fou,cheval,tour}};
 
-//printf("%c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c,", 
-//	table[0][0],table[0][1],table[0][2],table[0][3],table[0][4],table[0][5],table[0][6],table[0][7],
-//	table[1][0],table[1][1],table[1][2],table[1][3],table[1][4],table[1][5],table[1][6],table[1][7],
-//	table[2][0],table[2][1],table[2][2],table[2][3],table[2][4],table[2][5],table[2][6],table[2][7],
-//	table[3][0],table[3][1],table[3][2],table[3][3],table[3][4],table[3][5],table[3][6],table[3][7],
-//	table[4][0],table[4][1],table[4][2],table[4][3],table[4][4],table[4][5],table[4][6],table[4][7],
-//	table[5][0],table[5][1],table[5][2],table[5][3],table[5][4],table[5][5],table[5][6],table[5][7],
-//	table[6][0],table[6][1],table[6][2],table[6][3],table[6][4],table[6][5],table[6][6],table[6][7],
-//	table[7][0],table[7][1],table[7][2],table[7][3],table[7][4],table[7][5],table[7][6],table[7][7]
-//);
+	char table[8][8] = {
+		{ tour,cheval,fou,reine,roi,fou,cheval,tour },
+		{ pion,pion,pion,pion,pion,pion,pion,pion },
+		{ 0,0,0,0,0,0,0,0 },
+		{ 0,0,0,0,0,0,0,0 },
+		{ 0,0,0,0,0,0,0,0 },
+		{ 0,0,0,0,0,0,0,0 },
+		{ pion,pion,pion,pion,pion,pion,pion,pion },
+		{ tour,cheval,fou,reine,roi,fou,cheval,tour } };
 
-	printf("quel pion voulez vous bouger? \n1 = tour \n2 = fou\n3 = cavalier\n4 = reine\n5 = roi\n6 = cavalier\n7 = fou\n8 = tour  \n");
-	scanf("%d",&piece);
+	//printf("%c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c, \n %c,%c,%c,%c,%c,%c,%c,%c,", 
+	//	table[0][0],table[0][1],table[0][2],table[0][3],table[0][4],table[0][5],table[0][6],table[0][7],
+	//	table[1][0],table[1][1],table[1][2],table[1][3],table[1][4],table[1][5],table[1][6],table[1][7],
+	//	table[2][0],table[2][1],table[2][2],table[2][3],table[2][4],table[2][5],table[2][6],table[2][7],
+	//	table[3][0],table[3][1],table[3][2],table[3][3],table[3][4],table[3][5],table[3][6],table[3][7],
+	//	table[4][0],table[4][1],table[4][2],table[4][3],table[4][4],table[4][5],table[4][6],table[4][7],
+	//	table[5][0],table[5][1],table[5][2],table[5][3],table[5][4],table[5][5],table[5][6],table[5][7],
+	//	table[6][0],table[6][1],table[6][2],table[6][3],table[6][4],table[6][5],table[6][6],table[6][7],
+	//	table[7][0],table[7][1],table[7][2],table[7][3],table[7][4],table[7][5],table[7][6],table[7][7]
+	//);
 
-switch(piece) 
-{
-	case 1 : 
-	pTour();
+	printf("quel pion voulez vous bouger? \n tour (1) \n pion (2) cavalier(3)" );
+	scanf("%d", &piece);
 
-	break;
-	case 2 :
-	pPion();
-	break;
+	switch (piece)
+	{
+	case 1:
+		pTour();
+		break;
+	
+	case 2:
+		pPion();
+		break;
 
-}
+	case 3:
+		pCavalier();
+		break;
+	
+	}
 
-getch();
+	
 
 }
 
 void pTour()
 {
-	int nbr=0;
-	int nbr1=0;
-	int nbr2=0;
-
-	int dd=0;
-	int dg=0;
-	int db=0;
-	int dh=0;
+	int nbr = 0;
+	int nbr1= 0;
+	int nbr2 = 0;
 
 
-	printf("voullez vous deplacer votre tour vers le haut ou le bas, haut = 0 et bas = 1 ? : ");
-	scanf("%d",&nbr);
+	int dd = 0;
+	int dg = 0;
+	int db = 0;
+	int dh = 0;
 
-	if(nbr = 0)
+
+	printf("voullez vous deplacer votre tour vers le haut ou le bas, haut = (0) et bas = (1) ? : ");
+	scanf("%d", &nbr);
+
+	if (nbr == 0)
 	{
-	printf("de combien de case voullez-vous deplacer votre tour vers le haut ?  :  ");
-    scanf("%d",&dh);
+		printf("de combien de case voullez-vous deplacer votre tour vers le haut ?  :  ");
+		scanf("%d", &dh);
 
-	for(x=0;x=dh;x++)
-{
-	nbr1++;
-}
+		for (x = 0; x < dh; x++)
+		{
+			x++;
+			printf("deplacement %d \n", x);
+		}
 
 	}
 
-	else
+	if (nbr == 1)
 	{
 
-	printf("de combien de case voullez-vous deplacer votre tour vers le bas ? :  ");
-    scanf("%d",&db);
+		printf("de combien de case voullez-vous deplacer votre tour vers le bas ? :  ");
+		scanf("%d", &db);
 
-	for(y=0;y=nbr;y++)
+		for (y = 0; y = db; y++)
 		{
-			nbr1= nbr1-1;
+			nbr1 = nbr1 - 1;
 		}
 
 	}
@@ -104,62 +112,128 @@ void pTour()
 
 
 
-	printf("voullez vous deplacer votre tour vers la droite ou la gauche, droite = 0 et gauche = 1 ? : ");
-	scanf("%d",&nbr);
+	printf("voullez vous deplacer votre tour vers la droite ou la gauche, droite = (0) et gauche = (1) ? : ");
+	scanf("%d", &nbr);
 
-	if(nbr = 0)
+	if (nbr == 0)
 	{
 
-	printf("de combien de case voullez-vous deplacer votre tour vers la droite ?  :  ");
-    scanf("%d",&dd);
+		printf("de combien de case voullez-vous deplacer votre tour vers la droite ?  :  ");
+		scanf("%d", &dd);
 
-	for(x=0;x=dd;x++)
-	{
-		nbr2++;
+		for (x = 0; x = dd; x++)
+		{
+			nbr2++;
+		}
+
 	}
 
-	}
-
-	else
+	if (nbr == 1)
 	{
 		printf("de combien de case voullez-vous deplacer votre tour vers la gauche ? :  ");
-	    scanf("%d",&dg);
+		scanf("%d", &dg);
 
 
-		for(y=0;y=dg;y++)
+		for (y = 0; y = dg; y++)
 		{
-			nbr2 = nbr2-1;
-			printf("votre tour est désormain en ",nbr1,nbr2); 
+			nbr2 = nbr2 - 1;
+			printf("votre tour est désormain en %i %i ", nbr1, nbr2);
 		}
 	}
 
 
 }
+
 void pPion()
 {
-	if (manche==1)
+	if (manche == 1)
 	{
 
-		int nombre1; 
-		printf("de combien voulez vous déplacer la tour (1) ou (2) : ");
-		scanf("%d",&nombre1);
+		int nombre1;
+		printf("de combien voulez vous déplacer le pion (1) ou (2) : ");
+		scanf("%d", &nombre1);
 
-		for (y=0;y<=nombre1;y++)
+		for (y = 0; y <= nombre1; y++)
 		{
-			printf("déplacement vers le haut de  %d\n",y);
+			printf("déplacement vers le haut de  %d\n", y);
 		}
-	} 
+	}
 	else
 	{
-	
-		for (y=0;y=1;y++)												//si le tour est plus que 1 
+
+		for (y = 0; y = 1; y++)												//si le tour est plus que 1 
 		{
-			printf("déplacement vers la haut de 1 case \n",y);
+			printf("déplacement vers la haut de 1 case %d \n", y);
 		}
-	
+
 	}
 
-
+	_getch();
 	manche++;
-//fermeture du void ppion
-  }
+	//fermeture du void ppion
+}
+
+
+void pCavalier()
+{
+	int move;
+	int cav;
+	printf("voulez vous deplacez le premier cavalier (1) ou le second (2)");
+	scanf("%d", &cav);
+
+if (cav == 1) 
+
+{
+	
+	x = 1;
+	y = 0;
+	printf("\n \n position initiale du cavalier (x),(y) : %i , %i",x , y);
+	printf(" \n voulez vous le déplacer vers la droite (1) ou vers le gauche (2) ?");
+	scanf("%d", &move); 
+
+}
+ 
+if (move == 1) //deplacement à droite 
+
+{
+	
+	int i; 
+	for (i = 1 ; i < 3; i++)
+	{
+		x++;
+		printf(" \n deplacement de 2 vers la droite %i %i", x, y);
+		
+	}
+
+	for (i = 0 ; i < 2 ; i++) 
+	{
+		y++;
+     printf("\n déplacement de 1 vers le haut %i %i: ", x, y);
+	}
+	
+
+	if (move == 2) //déplacement à gauche
+
+	{
+		int i;
+		for (i = 1; i < 3; i++)
+		{
+
+			x++;
+			printf("déplacement de 2 vers le haut %i %i", x, y);
+		}
+
+		for (i = 1; i < 0; i--)
+		{
+			y--;
+			printf("déplacement de 1 vers la gauche %i %i", x, y);
+		}
+
+}
+	//fermeture de void cavalier
+}
+
+	
+
+	_getch();
+}
